@@ -1,2 +1,2 @@
-export const CHUNK_SIZE = 512;
-export const CHUNK_OVERLAP = 20;
+export const CHUNK_SIZE = 2048;
+export const CHUNK_OVERLAP = 200;

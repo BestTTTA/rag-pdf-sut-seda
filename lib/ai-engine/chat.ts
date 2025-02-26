@@ -8,8 +8,8 @@ type Props = {
 export const getChatEngine = async ({ chatHistory }: Props): Promise<ContextChatEngine> => {
   const chatModel = new OpenAI({
     model: "gpt-4o",
-    temperature: 0,
-    maxTokens: 10000,  
+    temperature: 0.1,
+    maxTokens: 8000,  
   });
 
   const index = await getIndexFromStore();
