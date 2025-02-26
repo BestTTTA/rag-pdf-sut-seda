@@ -1,12 +1,12 @@
+
 import { FileList } from "./file-list";
-import { BoxLayout } from "./ui/box-layout";
 import { UploadButton } from "./ui/upload-button";
 
 export const Files = () => {
   return (
-    <BoxLayout>
+    <div className="p-4 w-80 flex flex-col h-full gap-4">
       <FileList />
       <UploadButton />
-    </BoxLayout>
+    </div>
   );
 };

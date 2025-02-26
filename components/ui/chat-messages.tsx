@@ -1,7 +1,6 @@
 import { Message } from "ai";
 import { useEffect, useRef } from "react";
 import { Loader2 } from "lucide-react";
-import { Markdown } from "./markdown";
 
 type Props = {
   messages: Message[];
@@ -20,10 +19,6 @@ export const ChatMessages = (props: Props) => {
   };
 
   const isLastMessageFromAssistant = messageLength > 0 && lastMessage?.role !== "user";
-
-  // `isPending` indicate
-  // that stream response is not yet received from the server,
-  // so we show a loading indicator to give a better UX.
   const isPending = props.isLoading && !isLastMessageFromAssistant;
 
   useEffect(() => {
@@ -31,15 +26,28 @@ export const ChatMessages = (props: Props) => {
   }, [messageLength, lastMessage]);
 
   return (
-    <div className="flex h-[50vh] flex-col gap-5 divide-y overflow-y-auto pb-4" ref={scrollableChatContainerRef}>
+    <div
+      ref={scrollableChatContainerRef}
+      className="overflow-auto p-4 space-y-8 h-full"
+    >
       {props.messages.map((message) => (
-        <div key={message.id} className="flex-1 space-y-4">
-          <Markdown>{message.content}</Markdown>
+        <div
+          key={message.id}
+          className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
+        >
+          <div
+            className={`p-3 ${message.role === "user"
+                ? "bg-gray-400 text-black rounded-md"
+                : "bg-gray-200 text-black rounded-lg"
+              }`}
+          >
+            {message.content}
+          </div>
         </div>
       ))}
       {isPending && (
-        <div className="flex justify-center items-center pt-10">
-          <Loader2 className="h-4 w-4 animate-spin" />
+        <div className="flex justify-start">
+          <Loader2 className="animate-spin" />
         </div>
       )}
     </div>
