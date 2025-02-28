@@ -10,8 +10,8 @@ export const getIndexFromStore = async (): Promise<VectorStoreIndex> => {
   const vectorStore = new QdrantVectorStore({
     apiKey: process.env.QDRANT_API_KEY,
     url: process.env.QDRANT_URL,
-    collectionName: "document-collection",
-  });
+    collectionName: "document-collection-test",
+  });       
 
   const serviceContext = serviceContextFromDefaults({
     chunkSize: CHUNK_SIZE,

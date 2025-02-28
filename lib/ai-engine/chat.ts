@@ -10,6 +10,7 @@ export const getChatEngine = async ({ chatHistory }: Props): Promise<ContextChat
     model: "gpt-4o",
     temperature: 0.1,
     maxTokens: 8000,  
+    topP: 0.1,
   });
 
   const index = await getIndexFromStore();
