@@ -14,11 +14,11 @@ export default function Chat() {
   });
 
   return (
-    <div className="flex flex-col w-full h-full justify-end bg-white border p-4">
+    <div className="flex flex-col w-full h-full justify-end bg-white dark:bg-gray-900 border dark:border-gray-700 p-4">
       {messages.length > 0 ? (
       null
       ) : (
-        <div className="w-full h-full flex items-center justify-center text-gray-500">
+        <div className="w-full h-full flex items-center justify-center text-gray-500 dark:text-gray-400">
         <BiMessageAltDetail size={70} />
         <h1 className="text-lg font-thin ml-2">เริ่มการสนทนา</h1>
       </div>

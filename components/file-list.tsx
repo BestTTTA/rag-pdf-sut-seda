@@ -28,7 +28,7 @@ export const FileList = () => {
   if (loading) return <div>กำลังโหลดไฟล์...</div>;
 
   return (
-    <div className="flex h-full flex-col gap-4 overflow-auto">
+    <div className="flex h-full flex-col gap-4 overflow-auto ">
       <p className="text-center font-bold text-xl">เอกสาร</p>
       <div className="flex flex-col gap-2">
         {files.map((file) => (
@@ -37,10 +37,10 @@ export const FileList = () => {
             href={`https://utfs.io/f/${(file as { key: string }).key}`}
             key={(file as { key: string }).key}
             target="_blank"
-            className="flex gap-2 border-2 border-red-400 bg-red-50 rounded-md p-2 cursor-pointer hover:bg-red-100 transition-colors"
+            className="flex gap-2 border-2 dark:bg-gray-800 dark:border-white border-red-400 bg-red-50 rounded-md p-2 cursor-pointer hover:bg-red-100 transition-colors dark:text-white"
           >
             <div>
-            <FaFilePdf size={20} color="red"/>
+            <FaFilePdf size={20} className="dark:text-white text-red-500"/>
             </div>
             {(file as { name: string }).name}
           </Link>

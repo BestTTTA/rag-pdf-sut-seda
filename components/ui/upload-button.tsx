@@ -84,7 +84,7 @@ export const UploadButton = () => {
         onDragOver={handleDragOver}
         onClick={() => !isUploading && fileInputRef.current?.click()}
       >
-        <LuUpload className="inline-block mb-2" size={20} />
+        <LuUpload className="inline-block mb-2 dark:text-white" size={20} />
         {isUploading ? (
           <>
             <div>Uploading... {progress}%</div>
@@ -103,7 +103,7 @@ export const UploadButton = () => {
             </div>
           ))
         ) : (
-          <span>Upload File Here!</span>
+          <span className="dark:text-white">Upload File Here!</span>
         )}
       </div>
 

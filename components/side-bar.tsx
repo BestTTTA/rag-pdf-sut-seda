@@ -53,7 +53,7 @@ export default function SideBar() {
                     className="absolute top-4 right-2 p-1 rounded-full hover:bg-gray-300"
                     aria-label="Close sidebar"
                 >
-                    <BiSolidArrowFromRight size={30} />
+                    <BiSolidArrowFromRight size={30} className="dark:text-white"/>
                 </button>
               )}
           </div>
@@ -71,7 +71,7 @@ export default function SideBar() {
               {!isFilesOpen && (
                   <button 
                       onClick={() => setIsFilesOpen(true)}
-                      className="absolute top-4 left-2 p-1 rounded-full hover:bg-gray-300 z-10"
+                      className="absolute top-4 left-2 p-1 rounded-full hover:bg-gray-300 z-10 dark:text-white"
                       aria-label="Open sidebar"
                   >
                       <BiSolidArrowFromLeft size={30} />
