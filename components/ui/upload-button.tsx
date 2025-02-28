@@ -5,7 +5,7 @@ import { FileRouter } from "@/lib/fileRouter";
 import { useRef, useState } from "react";
 import { LuUpload } from "react-icons/lu";
 
-// Generate helper functions to manually upload files with the correct URL
+
 const { uploadFiles } = generateReactHelpers<FileRouter>({
   url: "/api/upload"
 });
