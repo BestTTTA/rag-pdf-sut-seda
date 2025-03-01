@@ -5,10 +5,10 @@ import { Button } from "./button";
 import { BiSun, BiMoon } from "react-icons/bi";
 
 export const ThemeToggle = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
-    // Check initial theme
+    document.documentElement.classList.add("dark");
     const isDarkMode = document.documentElement.classList.contains("dark");
     setIsDark(isDarkMode);
   }, []);
@@ -17,7 +17,6 @@ export const ThemeToggle = () => {
     const newTheme = !isDark;
     setIsDark(newTheme);
     
-    // Update document class for Tailwind dark mode
     if (newTheme) {
       document.documentElement.classList.add("dark");
     } else {

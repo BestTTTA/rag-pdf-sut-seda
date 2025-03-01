@@ -50,7 +50,7 @@ export default function SideBar() {
               {isFilesOpen && (
                 <button 
                     onClick={() => setIsFilesOpen(false)}
-                    className="absolute top-4 right-2 p-1 rounded-full hover:bg-gray-300"
+                    className="absolute top-4 right-2 p-1 rounded-lg hover:bg-gray-500"
                     aria-label="Close sidebar"
                 >
                     <BiSolidArrowFromRight size={30} className="dark:text-white"/>
@@ -58,7 +58,6 @@ export default function SideBar() {
               )}
           </div>
           
-          {/* Overlay for mobile */}
           {isMobile && isFilesOpen && (
             <div 
               className="fixed inset-0 bg-black/50 z-10"
@@ -71,7 +70,7 @@ export default function SideBar() {
               {!isFilesOpen && (
                   <button 
                       onClick={() => setIsFilesOpen(true)}
-                      className="absolute top-4 left-2 p-1 rounded-full hover:bg-gray-300 z-10 dark:text-white"
+                      className="absolute top-4 left-2 p-1 rounded-lg hover:bg-gray-500 z-10 dark:text-white"
                       aria-label="Open sidebar"
                   >
                       <BiSolidArrowFromLeft size={30} />

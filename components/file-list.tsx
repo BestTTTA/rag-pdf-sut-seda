@@ -37,7 +37,7 @@ export const FileList = () => {
             href={`https://utfs.io/f/${(file as { key: string }).key}`}
             key={(file as { key: string }).key}
             target="_blank"
-            className="flex gap-2 border-2 dark:bg-gray-800 dark:border-white border-red-400 bg-red-50 rounded-md p-2 cursor-pointer hover:bg-red-100 transition-colors dark:text-white"
+            className="flex gap-2 border-2 dark:bg-gray-800 dark:border-white border-red-400 bg-red-50 rounded-md p-2 cursor-pointer hover:bg-red-100 transition-colors dark:text-white dark:hover:bg-gray-700"
           >
             <div>
             <FaFilePdf size={20} className="dark:text-white text-red-500"/>

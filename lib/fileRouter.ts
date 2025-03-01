@@ -95,7 +95,7 @@ const processQueue = async () => {
 };
 
 const fileRouter: UploadThingFileRouter = {
-  fileUploader: f({ pdf: { maxFileSize: "1GB", maxFileCount: 30 } })
+  fileUploader: f({ pdf: { maxFileSize: "1GB", maxFileCount: 50 } })
     .middleware(({ files }) => {
       console.log(`Received ${files.length} files for upload`);
       return { uploadId: `upload-${Date.now()}` };
